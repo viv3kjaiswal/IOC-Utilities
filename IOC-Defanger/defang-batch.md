@@ -6,15 +6,16 @@ set "input=C:\Users\Raiz3n\Downloads\IOCdefang\ioc_list.txt"
 for /f "usebackq delims=" %%A in ("%input%") do (
     set "line=%%A"
 
-    rem Replace http with hxxp
-    set "line=!line:http://=hxxp[://]!"
+    rem ============================
+    rem URL Defang Logic
+    rem ============================
 
-    rem Replace https with hxxps
-    set "line=!line:https://=hxxps[://]!"
+    rem Normalize protocols directly
+    set "line=!line:https://=hxxps[:]//!"
+    set "line=!line:http://=hxxp[:]//!"
 
-    rem Replace . with [.] (but keep protocol intact)
+    rem Replace dots
     set "line=!line:.=[.]!"
-
 
     rem ============================
     rem Email Defang Logic
@@ -23,16 +24,14 @@ for /f "usebackq delims=" %%A in ("%input%") do (
     rem Replace @ with [@]
     set "line=!line:@=[@]!"
 
-
     rem ============================
     rem File Path Defang Logic
     rem ============================
 
-    rem Replace : with [:]
-    set "line=!line::=[:]!"
-
-    rem Replace :\ with [:\]
-    set "line=!line::\=[:\]!"
+    rem Defang drive letter paths like C:\
+    if "!line!" neq "!line::\=!" (
+        set "line=!line::\=[:\]!"
+    )
 
     echo !line!
 )
