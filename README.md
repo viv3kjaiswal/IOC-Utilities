@@ -10,8 +10,11 @@ The goal is to provide simple, portable, and analyst‑friendly scripts that can
 
 <h2 style="font-size: 28px;"><b>📁 Repository Structure</b></h2>
 
-- **🧹 IOC-Defanger/**  
+- **🛠️ IOC-Defanger/**  
   Tools for safely defanging URLs, domains, IPs, emails, and file paths.
+
+- **🌐 IP-Reputation-Checker/**  
+  Utility for checking the reputation of IP addresses using AbuseIPDB. Supports bulk IP lookups with simple configuration via API key and input file path.
 
 ➡️ **🧰 Future Tools/**  
 Additional utilities will be added as the toolkit grows.
