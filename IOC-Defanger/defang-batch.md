@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set "input=<Filepath>"
+set "input=Filepath"
 
 for /f "usebackq delims=" %%A in ("%input%") do (
     set "line=%%A"
