@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set "input=C:\Users\Raiz3n\Downloads\IOCdefang\ioc_list.txt"
+set "input=<Full path of file containing IOC list>"
 
 for /f "usebackq delims=" %%A in ("%input%") do (
     set "line=%%A"
