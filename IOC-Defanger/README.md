@@ -20,9 +20,9 @@ Before running any script, you must edit the script and update the full path to 
 
 Example of what you will update inside the script (shown here as plain text to avoid escaping issues in markdown fences):
 
-`set "input=< IOC LIST FILE PATH >"`
+`set "input=Filepath"`
 
-Replace the path with the location of your own IOC list.
+Replace the "Filepath" with the location of your own IOC list.
 
 ---
 
